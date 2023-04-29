@@ -1,0 +1,28 @@
+.statistics {
+  border-radius: 5px;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.stat_list {
+  display: flex;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+}
+
+.percentage {
+  font-weight: bold;
+  font-size: x-large;
+}

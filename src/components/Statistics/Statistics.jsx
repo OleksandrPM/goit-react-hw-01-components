@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import css from './Statistics.module.css';
 
 export { Statistics };
 
@@ -13,23 +14,27 @@ let key = 0;
 
 function Statistics(props) {
   const { title, stats } = props;
+  const statCount = stats.length;
   return (
-    <section className="statistics">
-      {title && <h2 className="title">{title}</h2>}
+    <section className={css.statistics}>
+      {title && <h2 className={css.title}>{title}</h2>}
 
-      <ul className="stat-list">
+      <ul className={css.stat_list}>
         {stats.map(statObj => {
           const { label, percentage } = statObj;
           key += 1;
 
           return (
             <li
-              className="item"
+              className={css.item}
               key={key}
-              style={{ backgroundColor: getRandomHexColor() }}
+              style={{
+                backgroundColor: getRandomHexColor(),
+                width: `calc(100% / ${statCount})`,
+              }}
             >
-              <span className="label">{label}</span>
-              <span className="percentage">{percentage}</span>
+              <span className={css.label}>{label}</span>
+              <span className={css.percentage}>{percentage}</span>
             </li>
           );
         })}
