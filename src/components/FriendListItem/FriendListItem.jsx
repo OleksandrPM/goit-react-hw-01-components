@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import css from './FriendListItem.module.css';
 
 export { FriendListItem };
 
@@ -20,21 +21,20 @@ function FriendListItem(props) {
   } = props;
 
   return (
-    <li className="item">
+    <li className={css.item}>
       {isOnline ? (
-        <span className="status" style={{ backgroundColor: onlineMarkerColor }}>
-          Online delete
-        </span>
+        <span
+          className={css.status}
+          style={{ backgroundColor: onlineMarkerColor }}
+        ></span>
       ) : (
         <span
-          className="status"
+          className={css.status}
           style={{ backgroundColor: offlineMarkerColor }}
-        >
-          Offline delete
-        </span>
+        ></span>
       )}
-      <img className="avatar" src={avatar} alt="User avatar" width="48" />
-      <p className="name">{name}</p>
+      <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
+      <p className={css.name}>{name}</p>
     </li>
   );
 }
