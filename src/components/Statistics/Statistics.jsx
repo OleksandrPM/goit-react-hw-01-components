@@ -10,8 +10,6 @@ Statistics.propTypes = {
   percentage: PropTypes.number,
 };
 
-let key = 0;
-
 function Statistics(props) {
   const { title, stats } = props;
   const statCount = stats.length;
@@ -22,12 +20,11 @@ function Statistics(props) {
       <ul className={css.stat_list}>
         {stats.map(statObj => {
           const { label, percentage } = statObj;
-          key += 1;
 
           return (
             <li
               className={css.item}
-              key={key}
+              key={label + percentage}
               style={{
                 backgroundColor: getRandomHexColor(),
                 width: `calc(100% / ${statCount})`,
